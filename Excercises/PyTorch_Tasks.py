@@ -44,20 +44,30 @@ tensor_p = torch.tensor(data_p)
 tensor_q = torch.tensor(data_q)
 
 # Elementwise Operations
-torch.add(tensor_p,1)
-tensor_p + 1
+tensor_p_add_01 = torch.add(tensor_p,1)
+tensor_p_add_02 = tensor_p + 1
+print(f"Elementwise Addition: \n {tensor_p_add_01} \n")
+print(f"Elementwise Addition with overloaded binary Operations: \n {tensor_p_add_02} \n")
 
-torch.mul(tensor_q,2)
-tensor_q*2
+tensor_q_mul_01 = torch.mul(tensor_q,2)
+tensor_q_mul_02 = tensor_q*2
+print(f"Elementwise Multiplication: \n {tensor_q_mul_01} \n")
+print(f"Elementwise Multiplication with overloaded binary Operations: \n {tensor_q_mul_02} \n")
 
 # Matrix-Matrix Product
 tensor_q_transpose = torch.transpose(tensor_q,0,1)
 mul_01 = tensor_p.matmul(tensor_q_transpose)
 mul_02 = tensor_p @ tensor_q_transpose
 
+print(f"Matrix Multiplication: \n {mul_01} \n")
+print(f"Matrix Multiplication with overloaded @ operator: \n {mul_02} \n")
+
 # Reduction Functions
-torch.sum(tensor_p)
-torch.max(tensor_p)
+red_sum = torch.sum(tensor_p)
+red_max = torch.max(tensor_p)
+
+print(f"Sum Reduction: \n {red_sum} \n")
+print(f"Max Reduction: \n {red_max} \n")
 
 # Difference of Code Snippets
 
@@ -74,15 +84,15 @@ l_tmp[:] = 0
 # Storage #
 ###########
 
-#!# Layout ?
-
 tensor = torch.rand_like(tensor_lists, dtype = torch.float32)
+print(f"Rand_like created Tensor: \n {tensor} \n")
 print(f"Shape of tensor: {tensor.shape}")
 # Stride is the jump necessary to go from one element to the next one in the specified dimension
 print(f"Stride of tensor: {tensor.stride()}")
 print(f"Datatype of tensor: {tensor.dtype}")
 print(f"Device tensor is stored on: {tensor.device}")
 
+# New Tensor with shape of "tensor" but the datatype should be torch.float32
 l_tensor_float = torch.rand_like(tensor,dtype = torch.float32)
 
 # Fix of Second Dimension (Describe Changes)
@@ -100,7 +110,7 @@ l_tensor_complex_view = tensor[::2,1,:]
 
 # Not Sure: ::2 means Module 2 and those Lines are being used in the first Dimension
 # shape from torch.Size([4, 2, 3]) to torch.Size([2, 3])
-# stride from (6, 3, 1) to (12,1) - German: Hängt von Lage im Speicher ab (Unklar, warum die andere Dimension dann nicht 2 ist, da ja eine weitere Liste "im Weg ist"
+# stride from (6, 3, 1) to (12,1)
 
 # contiguoas function (Alligned in Memory)
 
