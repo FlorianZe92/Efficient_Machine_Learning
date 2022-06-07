@@ -1,0 +1,24 @@
+(arm22_pytorch1.10) [fzeidler@fj160 mini_dnn_linear]$ LIBXSMM_TARGET=a64fx ./build/test
+===============================================================================
+All tests passed (3 assertions in 3 test cases)
+
+(arm22_pytorch1.10) [fzeidler@fj160 mini_dnn_linear]$ LIBXSMM_TARGET=a64fx OMP_PLACES={0}:48:1 OMP_NUM_THREADS=48 ./build/performance_matmul
+running performance tests
+here are our dimensions:
+  n: 128
+  k: 768
+  c: 512
+  bn: 64
+  bk: 16
+  bc: 128
+  nb: 2
+  kb: 48
+  cb: 4
+benchmarking MatmulReluAten..
+  repetitions:         7982
+  duration in seconds: 1.00312
+  FP32 GFLOPS:         800.998
+benchmarking MatmulLibxsmm..
+  repetitions:         15263
+  duration in seconds: 1.00285
+  FP32 GFLOPS:         1532.06
