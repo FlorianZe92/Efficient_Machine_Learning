@@ -1,0 +1,44 @@
+Dimensions:
+  n: 48
+  h: 34
+  w: 34
+  c: 512
+  k: 512
+  r: 3
+  s: 3
+  p: 32
+  q: 32
+  bc: 128
+  bk: 64
+  cb: 4
+  kb: 8
+
+benchmarking Conv2dAten..
+  repetitions:         12
+  duration in seconds: 0.936534
+  FP32 GFLOPS:         2971.74
+
+benchmarking Conv2dLibxsmm without OpenMP..
+  repetitions:         1
+  duration in seconds: 403.49
+  FP32 GFLOPS:         0.574806
+
+benchmarking Conv2dLibxsmm with OpenMP..
+  repetitions:         1
+  duration in seconds: 9.05659
+  FP32 GFLOPS:         25.6088
+
+benchmarking Conv2dReluLibxsmm..
+  repetitions:         1
+  duration in seconds: 10.9943
+  FP32 GFLOPS:         21.0953
+
+benchmarking Conv2dIm2col..
+  repetitions:         1
+  duration in seconds: 1.03603
+  FP32 GFLOPS:         223.862
+
+benchmarking Conv2dAten+ReluAten..
+  repetitions:         12
+  duration in seconds: 0.995252
+  FP32 GFLOPS:         2796.42
