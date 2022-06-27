@@ -1,0 +1,8 @@
+			nx	ny	nz	dtype	size(GigaBit)
+data_train.npz		782	590	1006	float32	14.85	
+labels_train.npz	782	590	1006	int8	3.71
+data_test_1.npz		782	251	1006	float32	6.32
+data_test_2.npz		334	841	1006	float32	9.04
+
+int8 entspricht:    8  Bit
+float32 entspricht: 32 Bit
