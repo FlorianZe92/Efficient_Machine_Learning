@@ -1,0 +1,10 @@
+Anzahl Epochen: 20
+
+Anzahl Prozesse  Zeit in Sekunden
+1		 784.29
+2		 521.92
+4		 349.45
+8		 297.97
+16		 274.77
+32		 269.41
+48		 273.07
