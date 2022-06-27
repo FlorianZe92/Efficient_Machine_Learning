@@ -1,0 +1,12 @@
+Max pooling
+Dient dazu, die Eingabedimensionen zu reduzieren.
+Hierbei wird ein max Filter für eine Teilregion angewandt und es wird nur ein Wert weitergegeben.
+
+Upsampling using bilinear interpolation
+Dient dazu, die Eingabedimensionenen zu vergrößern, in dem interpolierte Werte eingefügt werden.
+
+Skip connection
+Hierbei wird die Ausgabe einer Schicht als Teil der Eingabe für spätere Schichten verwendet.
+
+Batch Normalization
+Normalisierung von Daten mittels deren Mittelwert und Standardabweichung.
